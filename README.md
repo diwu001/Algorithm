@@ -1,2 +1,2 @@
 # Algorithm
-Leetcode + Lintcode
+Interesting algorithm problems in Leetcode and Lintcode
