@@ -18,7 +18,7 @@ public class Number_of_IslandsII {  //Time Complexity: O(nlgn) n is the number o
     	Point(int a, int b) { x = a; y = b; }
     }
     
-	static class DJSetNode {
+    static class DJSetNode {
         int rank;
         DJSetNode parent;
         public DJSetNode(int r) {
@@ -26,16 +26,16 @@ public class Number_of_IslandsII {  //Time Complexity: O(nlgn) n is the number o
         }
     }
     
-	static Set<DJSetNode> forest = new HashSet<DJSetNode>();
+    static Set<DJSetNode> forest = new HashSet<DJSetNode>();
     
-	// Create a new set and add it to forest
+    // Create a new set and add it to forest
     static DJSetNode makeSet() {
         DJSetNode cur = new DJSetNode(0);    
         forest.add(cur);
         return cur;
     }
     
-	// Find the root of current node
+    // Find the root of current node
     static DJSetNode find(DJSetNode n) {
         if (n == null) return n;
         while (n.parent!=null) {
@@ -44,7 +44,7 @@ public class Number_of_IslandsII {  //Time Complexity: O(nlgn) n is the number o
         return n;
     }
     
-	// Given two nodes in two sets, merge these two sets to a single set, return its root
+    // Given two nodes in two sets, merge these two sets to a single set, return its root
     static DJSetNode merge(DJSetNode n1, DJSetNode n2) {
         DJSetNode r1 = find(n1);   
         DJSetNode r2 = find(n2);
