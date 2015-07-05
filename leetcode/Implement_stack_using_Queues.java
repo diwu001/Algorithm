@@ -1,5 +1,5 @@
 import java.util.*;
-public class Leetcode_Implement_stack_using_Queues {
+public class Implement_stack_using_Queues {
 	//Time: push O(1), pop and peek O(n)
 	static class MyStack{
 	    Queue<Integer> q1=new LinkedList<Integer>();
