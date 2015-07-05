@@ -1,6 +1,6 @@
 import java.util.List;
 import java.util.ArrayList;
-public class Leetcode_Summary_Ranges {
+public class Summary_Ranges {
 	// Time O(n), use pre to track the start point of current interval
 	public List<String> summaryRanges(int[] nums) {
         List<String> res = new ArrayList<String>();
