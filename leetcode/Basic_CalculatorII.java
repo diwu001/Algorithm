@@ -1,5 +1,5 @@
 import java.util.Stack;
-public class Leedcode_Basic_CalculatorII {
+public class Basic_CalculatorII {
     public int calculate(String s) {
         if(s==null||s.length()==0) return 0;
         int n=s.length();
