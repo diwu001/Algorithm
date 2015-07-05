@@ -1,5 +1,5 @@
 import java.util.Stack;
-public class Leetcode_Inver_Binary_Tree {
+public class Inver_Binary_Tree {
 	//Iteration - preorder traversal
 	public TreeNode invertTree(TreeNode root) {
         if(root==null) return root;
