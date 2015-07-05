@@ -1,6 +1,6 @@
 import java.util.List;
 import java.util.ArrayList;
-public class Leetcode_Majority_ElementII {
+public class Majority_ElementII {
     public List<Integer> majorityElement(int[] nums) {
         List<Integer> result = new ArrayList<Integer>();
         if(nums==null||nums.length==0) return result;
