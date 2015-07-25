@@ -2,8 +2,8 @@
 //difference between A[i] and B[j] (|A[i] - B[j]|) is as small as possible, return their smallest difference.
 import java.util.Arrays;
 public class Lintcode_The_Smallest_Difference {
-	// Solution1: Sort then use two pointers, Time O(n)
-	public int smallestDifference(int[] A, int[] B) {
+    // Solution1: Sort then use two pointers, Time O(n)
+    public int smallestDifference(int[] A, int[] B) {
         if(A==null||A.length==0||B==null||B.length==0) return 0;
         int m=A.length,n=B.length;
         Arrays.sort(A);
@@ -25,7 +25,7 @@ public class Lintcode_The_Smallest_Difference {
     }
 	
     //Solution2: Binary Search, Time O(nlng)
-	public int smallestDifference2(int[] A, int[] B) {
+    public int smallestDifference2(int[] A, int[] B) {
         if(A==null||A.length==0||B==null||B.length==0) return 0;
         int m=A.length,n=B.length;
         Arrays.sort(A);
