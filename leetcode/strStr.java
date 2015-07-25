@@ -1,8 +1,8 @@
 // strStr("mississippi", "issi"), return 1
 // Rabin-Karp algorithm
 public class strStr {
-	public static int strStr(String haystack, String needle) {
-		if(haystack==null||needle==null||haystack.length()<needle.length()) return -1;
+    public int strStr(String haystack, String needle) {
+	if(haystack==null||needle==null||haystack.length()<needle.length()) return -1;
         if(haystack.length()==0) return needle.length()==0?0:-1;
         if(needle.length()==0) return 0;
         
