@@ -5,7 +5,7 @@ public class MaxQueue {
 	static LinkedList<Integer> data;  // Queue<Integer> doesn't have getLast()
 	static LinkedList<Integer> max;
 	
-	public MaxQueue2_9_12 () {
+	public MaxQueue () {
 		data = new LinkedList<Integer>();
 		max = new LinkedList<Integer>();
 	}
