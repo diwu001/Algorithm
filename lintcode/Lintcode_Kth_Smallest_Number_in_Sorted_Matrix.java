@@ -1,9 +1,9 @@
 //http://www.lintcode.com/en/problem/kth-smallest-number-in-sorted-matrix/
-import java.util.*;
-//Memory Limit Exceeded. Heapify k times which takes O(kLogn) time.
+//Heapify k times which takes O(kLogn) time.
 
+import java.util.*;
 public class Lintcode_Kth_Smallest_Number_in_Sorted_Matrix {
-	class Point{
+    class Point{
         int val,x,y;
         public Point(int val, int x, int y) {
             this.val=val;
@@ -22,6 +22,7 @@ public class Lintcode_Kth_Smallest_Number_in_Sorted_Matrix {
             }
         };
         PriorityQueue<Point> heap = new PriorityQueue<Point>(k,c);// minheap 
+        
         heap.add(new Point(matrix[0][0],0,0)); // 1st smallest in matrix
         visited[0][0] = true;
         while (k > 1) {
