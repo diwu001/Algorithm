@@ -1,9 +1,10 @@
 
 public class Search_2D_MatrixII {
-// Brute force: search each row using binary search. Time Complexity O(mlgn), m is the number of rows in the matrix, n is the number of columns
+    // Brute force: search each row using binary search. Time Complexity O(mlgn), 
+    // m is the number of rows in the matrix, n is the number of columns
 
-// Time Complexity O (m+n)
-	public int searchMatrix(int[][] matrix, int target) {
+    // Time Complexity O (m+n)
+    public int searchMatrix0(int[][] matrix, int target) {
         if(matrix==null||matrix.length==0) return 0;
         int m=matrix.length,n=matrix[0].length;
         int row = 0 ,col=n-1;
@@ -21,9 +22,10 @@ public class Search_2D_MatrixII {
         return count;
     }
 	
-//-----------------------------------------------------------------
-// At each search, remove 1/4 of the current search range. Time complexity T(n)=3*T(n/2)+c
-	public boolean searchMatrix1(int[][] matrix, int target) {
+    //-----------------------------------------------------------------------------------------
+    
+    // At each search, remove 1/4 of the current search range. Time complexity T(n)=3*T(n/2)+c
+    public boolean searchMatrix1(int[][] matrix, int target) {
         if(matrix==null||matrix.length==0) return false;
         int m=matrix.length, n=matrix[0].length;
         return helper(matrix, target, 0, 0, n-1, m-1);
@@ -46,10 +48,10 @@ public class Search_2D_MatrixII {
         }
     }
 		
-//-----------------------------------------------------------------	
+    //------------------------------------------------------------------------------------------------	
 	
-//  At each search, remove 1/4 of the current search range. Time Complexity T(n)=2*T(n/2)+c*n = nlgn
-	public boolean searchMatrix2(int[][] matrix, int target) {
+    //  At each search, remove 1/4 of the current search range. Time Complexity T(n)=2*T(n/2)+c*n = nlgn
+    public boolean searchMatrix2(int[][] matrix, int target) {
         if(matrix==null||matrix.length==0) return false;
         int m=matrix.length, n=matrix[0].length;
         return helper(matrix, target, 0, 0, n-1, m-1);
