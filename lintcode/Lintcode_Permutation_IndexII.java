@@ -5,9 +5,9 @@ which are ordered in lexicographical order. The index begins at 1. Given the per
 import java.util.TreeMap;
 import java.util.HashMap;
 public class Lintcode_Permutation_IndexII {
-	// Time:  O(n^2) Space: O(n)
-	public long permutationIndexII(int[] A) {
-		long index = 1, factor = 1;
+    // Time:  O(n^2) Space: O(n)
+    public long permutationIndexII(int[] A) {
+	long index = 1, factor = 1;
         int position = 2;
         HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
         map.put(A[A.length-1],1);
@@ -30,8 +30,8 @@ public class Lintcode_Permutation_IndexII {
         return index;
     }
 	
-	// Time:  O(n^2) Space: O(n)
-	public long permutationIndexII_2(int[] A) {
+    // Time:  O(n^2) Space: O(n)
+    public long permutationIndexII_2(int[] A) {
         long index = 1, factor = 1;
         int position = 2;
         TreeMap<Integer, Integer> map = new TreeMap<Integer, Integer>();
