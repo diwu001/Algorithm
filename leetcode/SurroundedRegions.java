@@ -1,7 +1,7 @@
 import java.util.LinkedList;
 /* Use BFS to change all the 'O' positions connected by 'O' in the border to '#, 
  * then change all remaining 'O' to 'X' (these 'O' are surrounded by 'X', and should be change to 'X'), 
- * and change all '#' back to "O" */
+ * and change all '#' back to 'O' */
 public class SurroundedRegions {
     public void solve(char[][] board) {
         if(board==null||board.length<=2) return;
