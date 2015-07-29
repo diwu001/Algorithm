@@ -1,17 +1,32 @@
 import java.util.LinkedList;
+/* Use BFS to change all the 'O' positions connected by 'O' in the border to '#, 
+ * then change all remaining 'O' to 'X' (these 'O' are surrounded by 'X', and should be change to 'X'), 
+ * and change all '#' back to "O" */
 public class SurroundedRegions {
-	public void solve(char[][] board) {
+    public void solve(char[][] board) {
         if(board==null||board.length<=2) return;
         int m=board.length,n=board[0].length;
         LinkedList<Integer> q=new LinkedList<Integer>();
         
         for(int i=0;i<m;i++) {
-            if(board[i][0]=='O') {board[i][0]='#'; q.offer(i*n);}
-            if(board[i][n-1]=='O') {board[i][n-1]='#';q.offer(i*n+n-1); }
+            if(board[i][0]=='O') {
+            	board[i][0]='#'; 
+            	q.offer(i*n);
+            }
+            if(board[i][n-1]=='O') {
+            	board[i][n-1]='#';
+            	q.offer(i*n+n-1); 
+            }
         }
         for(int i=0;i<n;i++) {
-            if(board[0][i]=='O') {board[0][i]='#'; q.offer(i);  }
-            if(board[m-1][i]=='O') {board[m-1][i]='#'; q.offer((m-1)*n+i); }
+            if(board[0][i]=='O') {
+            	board[0][i]='#'; 
+            	q.offer(i);  
+            }
+            if(board[m-1][i]=='O') {
+            	board[m-1][i]='#'; 
+            	q.offer((m-1)*n+i); 
+            }
         }
         
         while(!q.isEmpty()) {
