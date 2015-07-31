@@ -1,7 +1,7 @@
 
 public class TrapRainWater {
-	//Time O(n), Space O(1)
-	int getIndexOfMaxElement(int[] A) {
+    //Time O(n), Space O(1)
+    int getIndexOfMaxElement(int[] A) {
         int max = Integer.MIN_VALUE;
         int maxIndex = -1;
         for (int i = 0; i < A.length; i++) { // max height in A
@@ -42,8 +42,8 @@ public class TrapRainWater {
         return sum;
     }
 	
-	//Time O(n), Space O(n)
-	public int trap2(int[] A) {
+    //Time O(n), Space O(n)
+    int trap2(int[] A) {
         int n = A.length;
         if(n <= 2) return 0;
         int sum = 0;
