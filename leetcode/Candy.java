@@ -9,7 +9,7 @@ import java.util.PriorityQueue;
 import java.util.Arrays;
 
 public class Candy {
-	// Solution 1: O(nlgn), Space O(n)
+    // Solution 1: O(nlgn), Space O(n)
     class Wrapper {
         int index, val;
         Wrapper(int index, int val) {this.index=index; this.val=val;}
@@ -50,7 +50,7 @@ public class Candy {
     }
 	
     // Solution 2: O(n), Space O(n)
-	public static int candy2(int[] ratings) {
+    public static int candy2(int[] ratings) {
         int n = ratings.length;
         if(n==0) return 0;
         int sum = 0;
