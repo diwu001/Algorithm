@@ -3,11 +3,11 @@
 import java.util.ArrayList;
 
 public class Lintcode_Continuous_Subarray_SumII {   
-    // Solution 1: Time O(n), Space O(1)
-    /* For the max subarray sum with circle, find the min subarray sum without circle, 
+    /* Solution 1: Time O(n), Space O(1)
+       For the max subarray sum with circle, find the min subarray sum without circle, 
        then the remaining elements yield a max subarray sum with cycle 
-       Edge case: min subarray.end==n-1, result2[1]=n, it means remaining max subarray [0, min subarray.start-1], there is no cycle
-       min subarray.start==0, result2[0]=-1, it means remaining max subarray [min subarray.end+1, n-1], there is no cycle*/
+       Edge case: (1) min subarray.end==n-1, result2[1]=n, remaining max subarray is in [0, min subarray.start-1];
+                  (2) min subarray.start==0, result2[0]=-1, remaining max subarray is in [min subarray.end+1, n-1] */
     public ArrayList<Integer> continuousSubarraySumII_2(int[] A) {
         ArrayList<Integer> result1 = new ArrayList<Integer>();
         ArrayList<Integer> result2 = new ArrayList<Integer>();
@@ -62,8 +62,8 @@ public class Lintcode_Continuous_Subarray_SumII {
     
 /********************************************************************************/
 
-    // Solution 2: Time O(n), Space O(n)
-    /* Calculate max subarray sum with / withour circle */
+    /* Solution 2: Time O(n), Space O(n)
+       Calculate max subarray sum with / withour circle */
     public ArrayList<Integer> continuousSubarraySumII(int[] A) {
         ArrayList<Integer> result1 = new ArrayList<Integer>();
         ArrayList<Integer> result2 = new ArrayList<Integer>();
