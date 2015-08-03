@@ -84,14 +84,11 @@ public class Lintcode_Find_Weak_Connected_Component_in_Directed_Graph {
 	        for (DirectedGraphNode n:node.neighbors) {
 	            dfs(visited,n,nodes);
 	            
-	            //Find a component for node to merge with
-	            if(map.containsKey(n)) {
-	                // merge and return the root of the new tree
-	            	cur = merge(cur, map.get(n));  
-	                // update root for both n and node
-	                map.put(n,cur);
-	                map.put(node,cur);
-	            }
+	            // merge and return the root of the new tree
+	            cur = merge(cur, map.get(n));  
+	            // update root for both n and node
+	            map.put(n,cur);
+	            map.put(node,cur);
 	        }
 	        forest.get(find(cur)).add(node.label); //only root has list of labels
     	}
