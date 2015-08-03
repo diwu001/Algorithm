@@ -68,17 +68,16 @@ public class Number_of_IslandsII {  //Time Complexity: O(nlgn) n is the number o
         }
     }
     
-    static int add(Point p,DJSetNode[][] seaMap,boolean[][] hasPoint,int n, int m) {
+    static int add(Point p,DJSetNode[][] seaMap ,int n, int m) {
         List<DJSetNode> nbs = new ArrayList<DJSetNode>();     
         
-        if (p.x > 0 && hasPoint[p.x-1][p.y]) nbs.add(seaMap[p.x-1][p.y]);
-        if (p.y > 0 && hasPoint[p.x][p.y-1]) nbs.add(seaMap[p.x][p.y-1]);
-        if (p.x < n-1 && hasPoint[p.x+1][p.y]) nbs.add(seaMap[p.x+1][p.y]);
-        if (p.y < m-1 && hasPoint[p.x][p.y+1]) nbs.add(seaMap[p.x][p.y+1]);
+        if (p.x > 0 && seaMap[p.x-1][p.y]!=null) nbs.add(seaMap[p.x-1][p.y]);
+        if (p.y > 0 && seaMap[p.x][p.y-1]!=null) nbs.add(seaMap[p.x][p.y-1]);
+        if (p.x < n-1 && seaMap[p.x+1][p.y]!=null) nbs.add(seaMap[p.x+1][p.y]);
+        if (p.y < m-1 && seaMap[p.x][p.y+1]!=null) nbs.add(seaMap[p.x][p.y+1]);
 
         DJSetNode cur = makeSet(); 
         seaMap[p.x][p.y] = cur;     
-        hasPoint[p.x][p.y] = true;
         
         for (int i = 0; i < nbs.size();++i) {
             cur = merge(cur, nbs.get(i));   
@@ -90,9 +89,8 @@ public class Number_of_IslandsII {  //Time Complexity: O(nlgn) n is the number o
         List<Integer> result = new ArrayList<Integer>();
         if(operators==null||operators.length==0) return result;
         DJSetNode[][] seaMap = new DJSetNode[n][m];  // Store the DJSetNode at specific position
-        boolean[][] hasPoint = new boolean[n][m]; // Used to check whether or not the specific position already had a point
         for(int i = 0; i < operators.length; ++i) {
-            int a = add(operators[i],seaMap,hasPoint,n,m);
+            int a = add(operators[i],seaMap,n,m);
             result.add(a);
         }
         return result;
