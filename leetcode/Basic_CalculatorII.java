@@ -1,5 +1,6 @@
 import java.util.Stack;
 public class Basic_CalculatorII {
+    // Time O(n), Space O(1)
     public int calculate(String s) {
         if(s==null||s.length()==0) return 0;
         int n=s.length();
