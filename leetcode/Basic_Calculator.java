@@ -1,9 +1,10 @@
 import java.util.Stack;
 public class Basic_Calculator {
-	public int calculate(String s) {
+    // Time O(n)
+    public int calculate(String s) {
         if(s==null||s.length()==0) return 0;
         int sum=0,last=1,bracket=1;
-        Stack<Integer> stack =new Stack<Integer>();
+        Stack<Integer> stack=new Stack<Integer>();
         for(int i=0;i<s.length();i++) {
             if(s.charAt(i)==' ') continue;
             if(Character.isDigit(s.charAt(i))) {
@@ -24,7 +25,7 @@ public class Basic_Calculator {
                 //last=-1 push(-1) bracket=(-1)*(-1)=1 last=1 -> 3
                 //last=1 bracket=1 -> 2
             } else if(s.charAt(i)==')') {
-                bracket /=stack.pop();  //restore
+                bracket/=stack.pop();  //restore
                 //bracket=1/(-1)=-1;
                 //then f=-1 -> 6                
             }
