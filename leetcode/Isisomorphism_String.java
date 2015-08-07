@@ -1,6 +1,7 @@
 import java.util.HashMap;
 public class Isisomorphism_String {
-	public boolean isIsomorphic(String s, String t) {
+    // Time O(n), Space O(n)
+    public boolean isIsomorphic(String s, String t) {
         if(s==null||t==null||s.length()<=1||t.length()<=1) return true;
         HashMap<Character,Character> m1=new HashMap<Character,Character>();
         HashMap<Character,Character> m2=new HashMap<Character,Character>();
