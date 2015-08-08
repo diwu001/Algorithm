@@ -1,6 +1,6 @@
 import java.util.*;
 public class Word_Ladder_BiDirectional_BFS {
-	public int ladderLength(String start, String end, Set<String> dict) {
+    int ladderLength(String start, String end, Set<String> dict) {
         if(start==null||end==null||dict==null) return -1;
         if(start.length()==0||end.length()==0||dict.size()==0) return 0;
 
