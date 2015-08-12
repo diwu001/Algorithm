@@ -29,38 +29,38 @@ public class Binary_Tree_Postorder_Traversal {
 	
     // Iterative solution 1
     ArrayList<Integer> postorderTraversal2(TreeNode root) {
-		ArrayList<Integer> postorder = new ArrayList<Integer>();
-		if (root==null) return postorder;
-		Stack<TreeNode> s = new Stack<TreeNode>();
-		TreeNode cur = root;
-		while(!s.isEmpty() || cur!=null){
-			if(cur!=null) {
-				postorder.add(0,cur.val);
-				s.push(cur);
-				cur = cur.right;
+	ArrayList<Integer> postorder = new ArrayList<Integer>();
+	if (root==null) return postorder;
+	Stack<TreeNode> s = new Stack<TreeNode>();
+	TreeNode cur = root;
+	while(!s.isEmpty() || cur!=null){
+		if(cur!=null) {
+			postorder.add(0,cur.val);
+			s.push(cur);
+			cur = cur.right;
 	        } else {
 	              cur=s.pop();
 	              cur=cur.left;
 	        }
-		}
-		return postorder;
 	}
+	return postorder;
+    }
 	
     // Iterative solution 2
     ArrayList<Integer> postorderTraversal3(TreeNode root) {
-		ArrayList<Integer> postorder = new ArrayList<Integer>();
-		if (root==null) return postorder;
-		Stack<TreeNode> s = new Stack<TreeNode>();
-		TreeNode cur = root;
-		s.push(cur);
-		while(!s.isEmpty()){
-			cur = s.pop();
-			if(cur.left!=null) s.push(cur.left);  
-			if(cur.right!=null) s.push(cur.right);
-			postorder.add(0,cur.val);
-		}
-		return postorder;
+	ArrayList<Integer> postorder = new ArrayList<Integer>();
+	if (root==null) return postorder;
+	Stack<TreeNode> s = new Stack<TreeNode>();
+	TreeNode cur = root;
+	s.push(cur);
+	while(!s.isEmpty()){
+		cur = s.pop();
+		if(cur.left!=null) s.push(cur.left);  
+		if(cur.right!=null) s.push(cur.right);
+		postorder.add(0,cur.val);
 	}
+	return postorder;
+    }
 	
     //Iterative solution 3
     List<Integer> postorderTraversal(TreeNode root) {
