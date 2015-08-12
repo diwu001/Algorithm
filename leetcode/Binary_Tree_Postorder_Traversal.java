@@ -63,18 +63,25 @@ public class Binary_Tree_Postorder_Traversal {
 	}
 	
     //Iterative solution 3
-    ArrayList<Integer> postorderTraversal3(TreeNode root) {
-		ArrayList<Integer> postorder = new ArrayList<Integer>();
-		if (root==null) return postorder;
-		Stack<TreeNode> s = new Stack<TreeNode>();
-		TreeNode cur = root;
-		s.push(cur);
-		while(!s.isEmpty()){
-			cur = s.pop();
-			if(cur.left!=null) s.push(cur.left);  
-			if(cur.right!=null) s.push(cur.right);
-			postorder.add(0,cur.val);
-		}
-		return postorder;
-	}
+    List<Integer> postorderTraversal(TreeNode root) {
+        List<Integer> result = new ArrayList<Integer>();
+        if(root == null) return result;
+        Stack<TreeNode> s = new Stack<TreeNode>();
+        TreeNode cur = root, pre = null;
+        while(cur != null || !s.isEmpty()) {
+            if(cur != null) {
+                s.push(cur);
+                cur = cur.left;
+            } else {
+                TreeNode temp = s.peek();
+                if(temp.right!=null && pre!=temp.right) cur = temp.right;
+                else {
+                    result.add(temp.val);
+                    pre = temp;
+                    s.pop();
+                }
+            }
+        }
+        return result;
+    }
 }
