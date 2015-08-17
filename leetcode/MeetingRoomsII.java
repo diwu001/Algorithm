@@ -5,13 +5,14 @@
 import java.util.*;
 
 public class MeetingRoomsII {
-	class Interval {
-		 int start, end;
-		 Interval() { start = 0; end = 0; }
-		 Interval(int s, int e) { start = s; end = e; }
-	}
-	
-	class Point{
+    class Interval {
+	int start, end;
+	Interval() { start = 0; end = 0; }
+	Interval(int s, int e) { start = s; end = e; }
+    }
+
+    // Solution 1: sort all points. Time O(nlgn) Space O(n), n is the input size
+    class Point{
         int val;
         boolean isStart;
         Point(int val, boolean isStart) {
@@ -46,6 +47,43 @@ public class MeetingRoomsII {
                 count--;
             }
             conflict = Math.max(conflict, count);
+        }
+        return conflict;
+    }
+    
+    // Solution2: Sort the input array by start value. 
+    // Then go through the sorted array, find the earliest ending interval in O(1) time by using Priority Queue.
+    // If no conflict between current interval and the earliest ending interval, pop the earliest interval out of queue.
+    // Track the size of priority queue, the maximum size is the minimal number of rooms needed.
+    // Time O(nlgn) Space O(m), n is the input size, m is the max size of priority queue
+    int minMeetingRooms2(Interval[] intervals) {
+        int n = intervals.length;
+        if(n <= 1) return n;
+         
+        Comparator<Interval> c1 = new Comparator<Interval>() {
+            public int compare(Interval i, Interval j) {
+                return i.start - j.start;
+            }
+        };
+        Comparator<Interval> c2 = new Comparator<Interval>() {
+            public int compare(Interval i, Interval j) {
+                return i.end - j.end;
+            }
+        };
+        
+        Arrays.sort(intervals, c1);
+        PriorityQueue<Interval> pq = new PriorityQueue<Interval>(1, c2);
+        
+        pq.offer(intervals[0]);
+        int conflict = 0;
+        for(int i = 1; i < n; i++) {
+            Interval cur = intervals[i];
+            while(!pq.isEmpty()) {
+                if(pq.peek().end <= cur.start) pq.poll();
+                else break;
+            }
+            pq.add(cur);
+            conflict = Math.max(conflict, pq.size());
         }
         return conflict;
     }
