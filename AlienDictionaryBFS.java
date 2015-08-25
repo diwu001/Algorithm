@@ -17,7 +17,7 @@ There may be multiple valid order of letters, return any one of them is fine.*/
 
 import java.util.*;
 public class AlienDictionaryBFS {
-	static String alienOrder(String[] words) {
+    static String alienOrder(String[] words) {
         if(words == null || words.length == 0) return "";
         int n = words.length;
         Map<Character, HashSet<Character>> map = new HashMap<Character, HashSet<Character>>();
